@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Launching a delivery app in a country you don't live in — Milad Elkilani</title>
+<meta name="description" content="Language, currency, map pins, payment habits and category names — everything that broke on the way into a second market.">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="wrap narrow">
+
+<nav>
+  <a class="logo" href="../index.html">Milad Elkilani</a>
+  <ul>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../work.html">Work</a></li>
+    <li><a href="../journal.html">Journal</a></li>
+    <li><a href="../index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<article class="post">
+  <p class="kicker">Localisation</p>
+  <h1>Launching a delivery app in a country you don't live in</h1>
+  <p class="dek">Our product worked in Libya. Taking it into Tunisia taught me that "add a language" is the smallest part of entering a market — and that the incumbent's app is the best documentation you'll ever get.</p>
+  <p class="byline">September 2025 · 7 min read</p>
+
+  <p>My first serious mission as a PM was launch enablement for a second country. We had a delivery platform working in Libya — customer app, driver app, partner app, operations dashboard — and a target to launch in Tunisia against an incumbent who was already there and already good.</p>
+
+  <p>The goal was written down as: launch on time, with the right messaging, strong acquisition and retention mechanisms, and a differentiator strategy. Four of those five are marketing. Only one of them is "build the thing".</p>
+
+  <h2>1. The map pin is a product decision</h2>
+
+  <p>Here's a class of bug that doesn't exist until you have two countries. Your app has defaults baked in that nobody ever wrote down as decisions:</p>
+
+  <ul>
+    <li>The login screen's country code, which quietly assumes one country.</li>
+    <li>The map pin's starting position when a new user opens the address screen.</li>
+    <li>The currency and how it's formatted.</li>
+    <li>Banners and promotions, which were built to go to everyone because "everyone" only ever meant one place.</li>
+  </ul>
+
+  <p>We fixed the first two by deriving them from the user's IP. It sounds trivial. It isn't: a new user in Tunis dropped onto a map centred on Tripoli has to pan across the Mediterranean before they can order anything, and most of them simply won't. Every one of those defaults is a place where a first-time user can silently fail.</p>
+
+  <p>The banner one was worse, because it was an internal failure: an admin could send a message intended for one country to everyone, since the system had no reason to ask which market it was for. We had to make the country an explicit, required choice — the fix is one dropdown, the cost of not having it is the wrong message in the wrong country.</p>
+
+  <h2>2. Translation is not localisation</h2>
+
+  <p>We had a genuinely large translation job: French and Arabic across the customer app, the driver app, the partner app and every backend-generated notification. Backend strings are the ones everyone forgets, because they don't appear in any design file — they arrive on someone's phone at 9pm.</p>
+
+  <p>But the harder problem wasn't translation, it was naming. Category names, service names, the words for the things people order. A category name that reads naturally in one market can be slightly foreign in another, and "slightly foreign" in a home screen category is enough to make a user scroll past it. That's not a job for a translation tool. It's a job for someone local telling you the word is wrong.</p>
+
+  <p>Which is why the part of the plan I'd defend hardest, if I did it again, is the least technical one: <b>talk to customers, drivers and partners on the ground, and document local behaviour rather than assuming it transfers.</b> I spent time on the road with the operations team and did the delivery job myself. Nothing in a dashboard would have told me what I learned in a car.</p>
+
+  <h2>3. The incumbent's app is free research</h2>
+
+  <p>I ran a detailed teardown of the incumbent's customer and driver apps. The trap with competitor teardowns is that they turn into a to-do list — they have this, we should have this — and you spend your launch shipping someone else's roadmap a year late.</p>
+
+  <p>The version that's actually useful asks two different questions:</p>
+
+  <ol>
+    <li><b>What have they made users expect?</b> If every user in the market already knows what a delivery app looks like, deviating from that costs you, and you should only pay that cost deliberately.</li>
+    <li><b>What are they structurally unable to do?</b> That's the differentiator, and it's usually not a feature. It's a relationship, a cost base, or a market they don't serve.</li>
+  </ol>
+
+  <p>The first question tells you what not to reinvent. The second tells you why you're bothering at all.</p>
+
+  <h2>4. Acquisition is a product problem before it's a marketing one</h2>
+
+  <p>The single change I pushed hardest for was <b>guest by default</b>: let someone browse, build a cart and reach checkout without an account, then promote them to a registered user at the moment they have something to lose — with their cart restored on the other side.</p>
+
+  <p>A signup wall at the front of an app in a new market is asking for trust before you've given any value. Moving it to after the cart is built inverts that. It's a small piece of engineering and one of the highest-leverage things you can do in a launch.</p>
+
+  <p>The same logic applies to payment. You cannot assume the payment habits of one country carry into the next. Refund expectations, which methods people trust, whether cash is the default or the exception — all of it changes at the border, and all of it has to be answered before launch rather than discovered after.</p>
+
+  <h2>5. Speed is a feature, but only in one direction</h2>
+
+  <p>One line in my original brief sat awkwardly with me for weeks: <i>make sure the launch is on track, and accelerate it to get feedback quickly.</i></p>
+
+  <p>I read it at first as pressure. It isn't. In a new market, every week before launch is a week of guessing, and every week after launch is a week of learning. The point of shipping fast isn't the ship date — it's shortening the period where you're operating on assumptions about a country you don't live in.</p>
+
+  <p>That only holds if you've built the instrumentation first. We stood up a market-specific metrics dashboard and documented the existing dashboard features and processes before launch, so that day one produced data instead of anecdotes. Launching fast without that isn't learning faster. It's just being wrong sooner, in public.</p>
+
+  <div class="takeaway">
+    <h3>The takeaway</h3>
+    <p>Entering a second market doesn't test your product. It tests every assumption your product made and never wrote down — the country code, the map pin, the currency, the category name, and who your app thinks "everyone" means.</p>
+  </div>
+
+  <div class="postnav">
+    <a href="prestoq-20-of-100.html">← Previous: 20 of 100</a>
+    <a href="../journal.html">All posts →</a>
+  </div>
+</article>
+
+<footer>
+  <span>© 2026 Mohamed Milad Elkilani</span>
+  <span><a href="https://github.com/mohamedmilad21">GitHub</a> &nbsp;·&nbsp; <a href="mailto:mohamedmilad2121@gmail.com">Email</a></span>
+</footer>
+
+</div>
+</body>
+</html>

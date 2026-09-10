@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conclusion first — Milad Elkilani</title>
+<meta name="description" content="I sent a delivery-time analysis full of numbers. The reply was one sentence, and it changed how I write analysis permanently.">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="wrap narrow">
+
+<nav>
+  <a class="logo" href="../index.html">Milad Elkilani</a>
+  <ul>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../work.html">Work</a></li>
+    <li><a href="../journal.html">Journal</a></li>
+    <li><a href="../index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<article class="post">
+  <p class="kicker">Analytics</p>
+  <h1>Conclusion first: how one comment rewired the way I write analysis</h1>
+  <p class="dek">I sent a delivery-time breakdown full of correct numbers. The reply was one sentence long, and I've written every analysis differently since.</p>
+  <p class="byline">January 2026 · 5 min read</p>
+
+  <p>We had just changed how orders were dispatched to drivers. My job was to find out whether it worked. So I pulled the numbers, compared the days before and after, and wrote it up: a breakdown of single orders versus batched orders, delivery times, waiting times, the lot.</p>
+
+  <p>The headline finding was this. Batched orders — two orders carried on one journey — still took nearly twice as long as single orders. The change had moved them from <b>13.47 minutes to 13.13 minutes</b>. About twenty seconds.</p>
+
+  <p>I sent it. The response was:</p>
+
+  <blockquote>
+    In an analysis it's better to provide a conclusion first, and what we should do based on that conclusion.
+    <cite>My product lead</cite>
+  </blockquote>
+
+  <p>That's it. No dispute about the numbers. The numbers were fine. The problem was that I'd written a report and called it an analysis.</p>
+
+  <h2>The difference between a report and an analysis</h2>
+
+  <p>A report tells you what happened. An analysis tells you what to do about it. I had spent my effort on the first and assumed the reader would do the second, which is a polite way of saying I had done half the job and handed over the hard half.</p>
+
+  <p>Worse: by burying the finding at the bottom, I'd made it possible to skim the document and come away thinking the change had worked, because the direction of travel was positive. It wasn't wrong. It just wasn't <i>useful</i>. Twenty seconds on a thirteen-minute journey is noise, and the honest conclusion was that batching wasn't paying for itself yet.</p>
+
+  <p>Here's the same finding, rewritten the way I'd send it today:</p>
+
+  <div class="takeaway">
+    <h3>Conclusion</h3>
+    <p>The new dispatch logic has not fixed batching. Batched orders still take roughly twice as long as single ones (13.13 min vs. 13.47 min before the change — a 0.34 min improvement, inside normal daily variance). Recommendation: stop tuning dispatch parameters manually and treat batching distance and time-window rules as the next thing to shape. Evidence below.</p>
+  </div>
+
+  <h2>The second correction, which was sharper</h2>
+
+  <p>In the same conversation I was pulled up on something else. I had been reporting one number — delivery time — as if it described one thing. It doesn't:</p>
+
+  <ul>
+    <li><b>Restaurant waiting time</b> — from the driver arriving at the restaurant to leaving with the order. That's a partner performance problem.</li>
+    <li><b>Total delivery time</b> — from the customer placing the order to receiving it. That's the customer's experience.</li>
+  </ul>
+
+  <p>They move for completely different reasons. A day where drivers wait longer at restaurants and a day where dispatch is slow both show up as "delivery time went up", and if you only track the combined number you will spend a week arguing about the wrong half of the problem. We'd been doing exactly that.</p>
+
+  <p>Once I split them, the arguments got much shorter. And the target became specific instead of aspirational: restaurant waiting time should drop by at least a quarter, ideally by half.</p>
+
+  <h2>Three rules I took from it</h2>
+
+  <ol>
+    <li><b>Lead with the conclusion and the recommendation.</b> Then the evidence, for anyone who wants to check your work. Nobody has ever complained that I got to the point too quickly.</li>
+    <li><b>Say when a result is inside the noise.</b> A 2.5% improvement in a metric that swings 10% day to day is not an improvement. Reporting it as one damages your credibility for the day you actually have a real result.</li>
+    <li><b>Never report a composite metric you can decompose.</b> If a number is the sum of two different people's behaviour, split it before anyone builds a decision on it.</li>
+  </ol>
+
+  <p>There's a fourth one that came later, from a different mistake. Before running an experiment on sign-ups, build the dashboard that tracks sign-ups <i>first</i>, so that if the number falls you see it that day rather than at the end of the test. Instrument, then ship. I now treat the guard dashboard as part of the feature, not part of the follow-up.</p>
+
+  <div class="takeaway">
+    <h3>The takeaway</h3>
+    <p>Your analysis is not finished when the query returns. It's finished when someone can read the first paragraph and know what to do.</p>
+  </div>
+
+  <div class="postnav">
+    <a href="three-prds-in-one-week.html">← Previous: Three PRDs</a>
+    <a href="prestoq-20-of-100.html">Next: 20 of 100 →</a>
+  </div>
+</article>
+
+<footer>
+  <span>© 2026 Mohamed Milad Elkilani</span>
+  <span><a href="https://github.com/mohamedmilad21">GitHub</a> &nbsp;·&nbsp; <a href="mailto:mohamedmilad2121@gmail.com">Email</a></span>
+</footer>
+
+</div>
+</body>
+</html>

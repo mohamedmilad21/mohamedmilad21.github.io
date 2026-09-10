@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Three PRDs in one week — Milad Elkilani</title>
+<meta name="description" content="My lead asked for three betting-table-ready PRDs in five days. Writing them was the easy part.">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="wrap narrow">
+
+<nav>
+  <a class="logo" href="../index.html">Milad Elkilani</a>
+  <ul>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../work.html">Work</a></li>
+    <li><a href="../journal.html">Journal</a></li>
+    <li><a href="../index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<article class="post">
+  <p class="kicker">Prioritisation</p>
+  <h1>Three PRDs in one week, and the question that broke all of them</h1>
+  <p class="dek">Writing three product requirement documents in five days is a typing problem. Choosing which three problems deserve a room's attention is a completely different job.</p>
+  <p class="byline">March 2026 · 6 min read</p>
+
+  <p>The brief from my product lead was one paragraph long:</p>
+
+  <blockquote>
+    Shape three PRDs and bring each one to a "ready for the betting table" level by the end of the week. The problem space, customer and business pain with evidence, proposed solution, expected impact and success metrics. They should reflect the top priorities for the business — things that, when done, could move the needle.
+    <cite>The assignment, more or less verbatim</cite>
+  </blockquote>
+
+  <p>My first instinct was to open a document. That was wrong, and it cost me two days.</p>
+
+  <h2>The trap: solutions are easier than problems</h2>
+
+  <p>We run a six-week build cycle followed by a two-week cooldown that ends at a betting table — the strategic manager, the CTO, the engineering director and my product lead in one room, deciding what the next six weeks get spent on. Whatever I bring has to survive that room.</p>
+
+  <p>I had no shortage of material. Our Discovery board collects stakeholder requests continuously. Support tickets pile up. Operations sends things daily. I could have picked three interesting-looking requests and written three tidy documents by Wednesday.</p>
+
+  <p>What I actually had to do first was sit with three sources at once and look for overlap:</p>
+
+  <ul>
+    <li><b>Stakeholder requests</b> — what the business is asking for out loud.</li>
+    <li><b>Customer problems from support tickets</b> — what users hit often enough to complain about.</li>
+    <li><b>Data</b> — what's true whether or not anyone complained.</li>
+  </ul>
+
+  <p>A problem that shows up in all three is a candidate. A problem that shows up in only one is usually someone's preference wearing a costume.</p>
+
+  <h2>The question that broke my first draft</h2>
+
+  <p>Earlier that year I'd brought a proposal about splitting very large orders across multiple drivers. I'd done the competitor research. I had three approaches sketched: let the partner flag an order as needing a second driver, let the customer choose, or forecast it from order composition and charge at checkout. I was pleased with it.</p>
+
+  <p>The reply was two lines:</p>
+
+  <blockquote>
+    Why do you think this is a priority in the first place, regardless of the solution? What is the number of orders expected that need to be split?
+    <cite>My product lead</cite>
+  </blockquote>
+
+  <p>I had an answer to the first question — we were moving into larger retail partners, so large orders were going to become structural rather than occasional. I did not have an answer to the second one. I had never counted.</p>
+
+  <p>That is the whole lesson. <b>A solution nobody can size is not a proposal, it's an opinion.</b> The room isn't deciding whether your idea is clever. It's deciding whether six weeks of engineering time spent here beats six weeks spent somewhere else, and it can't do that without a number.</p>
+
+  <h2>What "betting-table ready" actually means</h2>
+
+  <p>By the end of that week I'd settled on a structure I still use. Every shaped brief answers these, in this order:</p>
+
+  <table>
+    <tr><th>Section</th><th>The question it answers</th></tr>
+    <tr><td>Problem</td><td>What is broken, stated without naming a solution?</td></tr>
+    <tr><td>Why it matters</td><td>What does it cost the business today — cancellations, support volume, courier time, margin?</td></tr>
+    <tr><td>Evidence</td><td>Which tickets, which order IDs, which dates, which query?</td></tr>
+    <tr><td>Size</td><td>How many orders, partners or users does this touch per month?</td></tr>
+    <tr><td>How others solved it</td><td>What does the market already know that we'd otherwise rediscover?</td></tr>
+    <tr><td>Appetite &amp; boundaries</td><td>What is in scope, and what are we explicitly not doing?</td></tr>
+    <tr><td>Success criteria</td><td>What number moves, and by how much, for this to have been worth it?</td></tr>
+  </table>
+
+  <p>Note what's missing: a screen-by-screen description. I used to think a PRD was a technical specification with a paragraph of context at the top. I was corrected on that early:</p>
+
+  <blockquote>
+    A PRD is meant to provide insights about the market too, not just technical details. Some teams don't even write technical details and scenarios in PRDs — they use PRDs as a marketing tool to sell ideas to senior executives.
+    <cite>My product lead, June 2025</cite>
+  </blockquote>
+
+  <p>That reframing did more for my writing than any template. The document's job is to make a case. The technical detail can follow once the bet is won and the engineering director has run technical verification.</p>
+
+  <h2>What I'd tell myself at the start of that week</h2>
+
+  <ol>
+    <li><b>Spend day one counting, not writing.</b> If you can't size the problem, you don't have one yet.</li>
+    <li><b>Pick problems that appear in more than one source.</b> Requests, tickets and data agreeing is the closest thing to a signal you'll get.</li>
+    <li><b>Write the "why now" before the "what".</b> Half the ideas that die at the betting table are real problems at the wrong time.</li>
+    <li><b>Check in daily.</b> I was told to do a quick daily check-in to surface blockers early. I treated it as supervision. It was actually the fastest way to find out on Tuesday that a framing was wrong, instead of on Friday.</li>
+    <li><b>Bring three, expect one.</b> The room votes. Losing two bets isn't failure — it's the process working.</li>
+  </ol>
+
+  <div class="takeaway">
+    <h3>The takeaway</h3>
+    <p>The hardest part of shaping isn't the document. It's having the discipline to answer "why is this worth six weeks of the company's time?" before you've fallen in love with your own solution.</p>
+  </div>
+
+  <div class="postnav">
+    <a href="../journal.html">← All posts</a>
+    <a href="conclusion-first.html">Next: Conclusion first →</a>
+  </div>
+</article>
+
+<footer>
+  <span>© 2026 Mohamed Milad Elkilani</span>
+  <span><a href="https://github.com/mohamedmilad21">GitHub</a> &nbsp;·&nbsp; <a href="mailto:mohamedmilad2121@gmail.com">Email</a></span>
+</footer>
+
+</div>
+</body>
+</html>
