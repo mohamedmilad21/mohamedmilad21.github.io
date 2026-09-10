@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Milad Elkilani — The PM Journal</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sand:#EFE6D6;      /* desert sand, base */
+  --ink:#1D2A33;       /* deep slate text */
+  --sea:#1F6F78;       /* Mediterranean teal */
+  --sun:#E3A72F;       /* saffron highlight */
+  --clay:#B5563A;      /* old-city brick */
+  --paper:#FBF7EF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--sand);color:var(--ink);font-family:Karla,sans-serif;font-size:17px;line-height:1.6}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sea);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+
+nav{display:flex;justify-content:space-between;align-items:center;padding:26px 0}
+.logo{font-family:Fraunces,serif;font-weight:800;font-size:22px;text-decoration:none}
+nav ul{display:flex;gap:26px;list-style:none;font-weight:500}
+nav ul a{text-decoration:none}
+nav ul a:hover{color:var(--sea)}
+
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:end;padding:56px 0 72px}
+.hero h1{font-family:Fraunces,serif;font-weight:800;font-size:clamp(44px,6vw,78px);line-height:1;letter-spacing:-.02em}
+.hero p{margin-top:24px;max-width:46ch;font-size:19px}
+.hero .cta{display:inline-block;margin-top:28px;background:var(--ink);color:var(--paper);padding:14px 24px;border-radius:40px;text-decoration:none;font-weight:700}
+.hero .cta:hover{background:var(--sea)}
+.now{background:var(--paper);border-left:6px solid var(--sun);padding:24px 26px;border-radius:0 14px 14px 0}
+.now h2{font-family:Fraunces,serif;font-size:22px;margin-bottom:10px}
+.now li{list-style:none;padding:6px 0;border-bottom:1px dashed #d8ccb6}
+.now li:last-child{border:0}
+.now small{display:block;margin-top:12px;color:#6b6456}
+
+/* Skill tree — the one memorable thing */
+.tree{background:var(--ink);color:var(--paper);border-radius:28px;padding:56px 48px}
+.tree h2{font-family:Fraunces,serif;font-size:40px;line-height:1.1}
+.tree .intro{margin-top:10px;max-width:56ch;color:#c9d3d8}
+.branches{margin-top:40px;display:grid;grid-template-columns:repeat(3,1fr);gap:34px 40px}
+.skill h3{font-family:Fraunces,serif;font-weight:600;font-size:21px;display:flex;justify-content:space-between;align-items:baseline}
+.skill h3 span{font-family:Karla;font-size:14px;color:var(--sun);font-weight:700}
+.rings{display:flex;gap:6px;margin:12px 0 10px}
+.rings i{width:100%;height:10px;border-radius:5px;background:#34444f}
+.rings i.on{background:var(--sun)}
+.rings i.grow{background:repeating-linear-gradient(45deg,var(--sea) 0 5px,#34444f 5px 10px)}
+.skill p{font-size:15px;color:#c9d3d8}
+.skill a{display:inline-block;margin-top:8px;font-size:14px;color:var(--sun);font-weight:700}
+.legend{margin-top:40px;display:flex;gap:26px;font-size:14px;color:#c9d3d8}
+.legend b{display:inline-block;width:22px;height:10px;border-radius:5px;margin-right:8px;vertical-align:middle}
+
+.posts{padding:84px 0 40px}
+.posts header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:28px}
+.posts h2{font-family:Fraunces,serif;font-size:40px}
+.list article{display:grid;grid-template-columns:120px 1fr 150px;gap:24px;padding:26px 0;border-top:2px solid var(--ink)}
+.list time{font-weight:700;color:var(--clay)}
+.list h3{font-family:Fraunces,serif;font-size:25px;line-height:1.2}
+.list h3 a{text-decoration:none}
+.list h3 a:hover{color:var(--sea)}
+.list p{margin-top:6px;max-width:60ch}
+.tag{justify-self:end;align-self:start;background:var(--paper);border-radius:40px;padding:4px 14px;font-size:14px;font-weight:700;color:var(--sea)}
+
+.shelf{display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:40px 0 90px}
+.box{background:var(--paper);border-radius:22px;padding:34px}
+.box h2{font-family:Fraunces,serif;font-size:30px;margin-bottom:10px}
+.box.hire{background:var(--sea);color:var(--paper)}
+.box.hire a{display:inline-block;margin-top:18px;background:var(--sun);color:var(--ink);padding:12px 22px;border-radius:40px;text-decoration:none;font-weight:700}
+.book{padding:10px 0;border-bottom:1px dashed #d8ccb6}
+.book:last-child{border:0}
+.book b{font-family:Fraunces,serif}
+
+footer{border-top:2px solid var(--ink);padding:26px 0 40px;display:flex;justify-content:space-between;font-size:15px}
+
+@media(max-width:820px){
+  .hero,.shelf{grid-template-columns:1fr}
+  .branches{grid-template-columns:1fr 1fr}
+  .list article{grid-template-columns:1fr}
+  .tag{justify-self:start}
+  nav ul{gap:14px;font-size:15px}
+}
+@media(max-width:520px){.branches{grid-template-columns:1fr}.tree{padding:36px 24px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <a class="logo" href="#">Milad Elkilani</a>
+  <ul>
+    <li><a href="#journal">Journal</a></li>
+    <li><a href="#skills">Skill tree</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div>
+    <h1>Learning to build products, in public.</h1>
+    <p>I'm a product manager in Tripoli, working on delivery apps across North Africa. This is my journal: the skills I'm growing, the products I study, and the side projects I ship.</p>
+    <a class="cta" href="#journal">Read the journal</a>
+  </div>
+  <aside class="now">
+    <h2>Right now</h2>
+    <ul>
+      <li>Reading <i>Shape Up</i> for the second time</li>
+      <li>Practicing SQL for product analytics</li>
+      <li>Building my first side project on GitHub</li>
+    </ul>
+    <small>Updated September 2026</small>
+  </aside>
+</section>
+
+<section class="tree" id="skills">
+  <h2>My skill tree</h2>
+  <p class="intro">Every PM skill I'm working on, with an honest level and the posts that show my progress.</p>
+  <div class="branches">
+    <div class="skill">
+      <h3>Discovery <span>Level 4</span></h3>
+      <div class="rings"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+      <p>Turning stakeholder requests into real problems worth solving.</p>
+      <a href="#">3 posts</a>
+    </div>
+    <div class="skill">
+      <h3>Writing specs <span>Level 4</span></h3>
+      <div class="rings"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+      <p>PRDs and shaping briefs engineers actually want to read.</p>
+      <a href="#">2 posts</a>
+    </div>
+    <div class="skill">
+      <h3>Leadership <span>Level 3</span></h3>
+      <div class="rings"><i class="on"></i><i class="on"></i><i class="on"></i><i class="grow"></i><i></i></div>
+      <p>Leading PMs, designers and data engineers as one team.</p>
+      <a href="#">2 posts</a>
+    </div>
+    <div class="skill">
+      <h3>UX thinking <span>Level 3</span></h3>
+      <div class="rings"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+      <p>Designing flows for customers, drivers and partners.</p>
+      <a href="#">4 posts</a>
+    </div>
+    <div class="skill">
+      <h3>Data <span>Level 2</span></h3>
+      <div class="rings"><i class="on"></i><i class="on"></i><i class="grow"></i><i></i><i></i></div>
+      <p>Metrics, dashboards and learning SQL to answer my own questions.</p>
+      <a href="#">1 post</a>
+    </div>
+    <div class="skill">
+      <h3>Technical <span>Level 2</span></h3>
+      <div class="rings"><i class="on"></i><i class="on"></i><i class="grow"></i><i></i><i></i></div>
+      <p>APIs, payments and reading code well enough to ask good questions.</p>
+      <a href="#">1 post</a>
+    </div>
+  </div>
+  <div class="legend">
+    <span><b style="background:var(--sun)"></b>Earned</span>
+    <span><b style="background:repeating-linear-gradient(45deg,var(--sea) 0 5px,#34444f 5px 10px)"></b>Growing now</span>
+    <span><b style="background:#34444f"></b>Next</span>
+  </div>
+</section>
+
+<section class="posts" id="journal">
+  <header><h2>Latest from the journal</h2><a href="#">All posts</a></header>
+  <div class="list">
+    <article>
+      <time>Sep 2026</time>
+      <div><h3><a href="#">Growth log: what one month of leading a team taught me</a></h3><p>Delegation, feedback, and why my calendar changed completely.</p></div>
+      <span class="tag">Growth log</span>
+    </article>
+    <article>
+      <time>Aug 2026</time>
+      <div><h3><a href="#">Teardown: how Careem makes ordering feel instant</a></h3><p>A look at the small UX choices behind a fast checkout.</p></div>
+      <span class="tag">Teardown</span>
+    </article>
+    <article>
+      <time>Jul 2026</time>
+      <div><h3><a href="#">Building products for cash-first markets</a></h3><p>General lessons on payments, trust, and delivery in North Africa.</p></div>
+      <span class="tag">Ideas</span>
+    </article>
+  </div>
+</section>
+
+<section class="shelf" id="about">
+  <div class="box">
+    <h2>Reading shelf</h2>
+    <div class="book"><b>Shape Up</b> — ship in fixed cycles, cut scope, not quality.</div>
+    <div class="book"><b>Inspired</b> — fall in love with the problem first.</div>
+    <div class="book"><b>The Mom Test</b> — ask about their life, not your idea.</div>
+  </div>
+  <div class="box hire">
+    <h2>Work with me</h2>
+    <p>Open to conversations about product roles, mentoring, and building in emerging markets.</p>
+    <a href="#">Get in touch</a>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Milad Elkilani</span>
+  <span><a href="#">GitHub</a> &nbsp; <a href="#">Email</a> &nbsp; <a href="#">Newsletter</a></span>
+</footer>
+</div>
+</body>
+</html>
