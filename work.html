@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work &amp; History — Milad Elkilani</title>
+<meta name="description" content="What I've shipped as a Product Manager at Presto: Tunisia launch, partner dashboard, coupons, hypermarket integrations, dispatch analysis, the betting table, and more.">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<nav>
+  <a class="logo" href="index.html">Milad Elkilani</a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="work.html" aria-current="page">Work</a></li>
+    <li><a href="journal.html">Journal</a></li>
+    <li><a href="index.html#skills">Skill tree</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="post" style="padding-top:40px">
+  <p class="kicker">Work &amp; history</p>
+  <h1>What I've actually shipped.</h1>
+  <p class="dek">Product Manager at Presto since June 2025 — a delivery platform operating across Libya and Tunisia. This is the honest version of the CV: the projects, the decisions, and the parts that didn't go to plan.</p>
+</section>
+
+<section class="sec" style="padding-top:20px">
+  <header><h2>The products I work on</h2></header>
+  <div class="grid3">
+    <div class="card">
+      <h3>Customer app</h3>
+      <p>Ordering across food, groceries, hypermarkets and shops, in Arabic, French and English, across two countries.</p>
+    </div>
+    <div class="card">
+      <h3>PrestoMan (driver)</h3>
+      <p>The driver side: dispatch, order stacking, journeys, cash handling and status updates.</p>
+    </div>
+    <div class="card">
+      <h3>Partner app &amp; Business Manager</h3>
+      <p>How restaurants and shops run their menu, customisations, availability and performance.</p>
+    </div>
+    <div class="card">
+      <h3>Admin dashboard</h3>
+      <p>The operations control room: orders, compensation, blocks, coupons, banners, cities and hubs.</p>
+    </div>
+    <div class="card">
+      <h3>Arcues (ledger)</h3>
+      <p>The financial layer — partner settlements, journal entries and automated financial breakdowns.</p>
+    </div>
+    <div class="card">
+      <h3>Vendor integration API</h3>
+      <p>The public integration surface hypermarket and retail partners connect their catalogues and orders through.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <header><h2>Timeline</h2></header>
+  <div class="tl">
+
+    <div class="item">
+      <p class="when">June — August 2025</p>
+      <h3>Launching Presto in Tunisia</h3>
+      <p>My first real mission: help take a product built for Libya into a second country, against an incumbent that already owned the market.</p>
+      <ul>
+        <li>Ran a detailed competitive teardown of the incumbent's customer and driver apps, and turned it into a differentiator argument rather than a feature copy-list.</li>
+        <li>Built the Tunisia metrics dashboard and documented every existing dashboard feature and process, so the new market had a baseline from day one.</li>
+        <li>Drove localisation: French and Arabic UX language revisions, IP-based country code and map pin defaults, currency handling, and localised banners.</li>
+        <li>Pushed for guest-by-default onboarding with cart restore on sign-up, so acquisition wasn't gated behind a login screen.</li>
+        <li>Talked to customers, drivers and partners on the ground, and documented local behaviour and category preferences instead of assuming Libyan habits transferred.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <p class="when">June — September 2025</p>
+      <h3>The partner side: Business Manager, coupons and reporting</h3>
+      <p>Owned the specs for the tools partners and business managers use every day.</p>
+      <ul>
+        <li>Wrote the partner reporting spec around metrics admins and business managers actually needed — after finding out the real job to be done was generating monthly financial reports, not browsing charts. One consolidated table replaced a pile of separate exports.</li>
+        <li>Specified the coupons system end to end after researching how mature commerce platforms model it: coupon types (basket, delivery fee, product), budget caps instead of usage counts, a maximum discount value on percentage coupons to stop a campaign burning its budget in a day, and free-delivery coupons for new customers.</li>
+        <li>Deliberately kept the partner statistics page to one simple page — partners had asked for clarity, not a control panel.</li>
+        <li>Compensation and dispute amounts in the dashboard: defined the difference between money refunded to a customer at the partner's cost and money returned to a partner after a wrong compensation.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <p class="when">August — October 2025</p>
+      <h3>Hypermarket integrations and delivery performance</h3>
+      <ul>
+        <li>Ran the Geant hypermarket integration into Benghazi: catalogue matching by barcode, image URL ingestion, category cleanup, and live production test orders on the ground.</li>
+        <li>Found and escalated the real constraint — an API-only integration meant the partner couldn't accept or reject orders — instead of shipping around it quietly.</li>
+        <li>Analysed the new order-dispatching logic: batched orders were still taking nearly twice as long as single orders, improving only from 13.47 to 13.13 minutes. The honest read was that batching wasn't paying for itself yet.</li>
+        <li>Separated restaurant wait time from total customer delivery time, so we stopped arguing about one number that hid two different problems.</li>
+        <li>Proposed moving from manual, ops-driven dispatch settings to a rules-based automatic assignment system, and wrote the criteria questions — distance between pickups, orders per journey, order value ceilings, time windows — that the logic would need.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <p class="when">August 2025</p>
+      <h3>Hacking Growth in fifteen days</h3>
+      <p>Set as a development goal ahead of my evaluation: read a 271-page growth book in fifteen days and present it back to the team. It's where activation, retention and the north-star framing stopped being vocabulary and started being how I read our own numbers.</p>
+    </div>
+
+    <div class="item">
+      <p class="when">November 2025</p>
+      <h3>Rolling out how the product team works</h3>
+      <ul>
+        <li>Communicated the six-week cycle and two-week cooldown to the wider business — including <i>when</i> to submit requests so they'd actually be shaped in time for the next cycle, and that some things would be frozen mid-cycle for technical reasons.</li>
+        <li>Wrote PRDs for the customer order invoice and for letting admins revert a cancelled order to delivered.</li>
+        <li>Learned to build the guard dashboard first: before running a sign-up experiment, put a live sign-up tracker in place so a drop would be visible immediately rather than at the end of the test.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <p class="when">December 2025</p>
+      <h3>My first betting table</h3>
+      <ul>
+        <li>Given a week to shape three PRDs to betting-table standard: problem space, customer and business pain with evidence, proposed solution, expected impact and success metrics, plus competitor research.</li>
+        <li>Ran discovery across stakeholder requests, support tickets and data to pick which three problems were worth the room's time — the hardest part of the whole exercise.</li>
+        <li>Presented into a betting table with the strategic manager, CTO, engineering director and product lead. We came out with the ledger system and a redefinition of direct payments among the bets.</li>
+        <li>Ran the documentation and the meeting for a partner integration discovery session the same month.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <p class="when">January — March 2026</p>
+      <h3>Integrations, trust and the block-dispute flow</h3>
+      <ul>
+        <li>Owned partner onboarding onto the vendor integration API — test environments, credentials, webhook verification, and end-to-end order tests with partner engineering teams in another country.</li>
+        <li>Shipped the block-dispute flow: customers who'd been blocked could finally see it and contest it, surfaced at the moment they hit the wall rather than buried in a feedback form.</li>
+        <li>Worked on phone number masking and order-ID protection for customer and driver privacy.</li>
+        <li>Got pushed hard, and rightly, on prioritisation: <i>why is this a priority at all, regardless of the solution?</i> and <i>how many orders would actually be affected?</i> That question now goes at the top of every brief I write.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <p class="when">April — September 2026</p>
+      <h3>Leading, shaping, and handing work on</h3>
+      <ul>
+        <li>Lead a product team of PMs, designers and data engineers, and run the internship and trainer programme — three colleagues I trained are now onboarded on the team.</li>
+        <li>Own shaping during each cooldown: at least two projects brought to a shapeable state per cycle.</li>
+        <li>Business Manager foundations, automated financial breakdowns to partners, and market-specific cancellation reasons for Tunisia.</li>
+        <li>Explored combining personas, offers and notifications into a single campaign capability for the operations team.</li>
+        <li>Learned the unglamorous half of the job: chasing finance, engineering and operations across three threads at once so a feature actually reaches production.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<section class="sec">
+  <header><h2>How I'd describe myself to a hiring manager</h2></header>
+  <div class="box" style="max-width:800px">
+    <p>I'm a Product Manager who works close to the operation. I've launched a product into a second country, specified the tools that thousands of partner and driver interactions run through, and learned to defend a prioritisation call in a room with the CTO in it.</p>
+    <p style="margin-top:16px">I'm strongest at discovery and shaping — turning a vague stakeholder request into a problem with evidence attached. I'm still growing at experimentation design and at long-range strategy, which is exactly why they're marked Level 2 on my skill tree rather than rounded up.</p>
+    <p style="margin-top:16px"><a href="mailto:mohamedmilad2121@gmail.com" style="font-weight:700;color:var(--sea)">mohamedmilad2121@gmail.com</a></p>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Mohamed Milad Elkilani — Tripoli, Libya</span>
+  <span>
+    <a href="https://github.com/mohamedmilad21">GitHub</a> &nbsp;·&nbsp;
+    <a href="mailto:mohamedmilad2121@gmail.com">Email</a> &nbsp;·&nbsp;
+    <a href="journal.html">Journal</a>
+  </span>
+</footer>
+
+</div>
+</body>
+</html>
